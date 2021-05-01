@@ -1,7 +1,0 @@
-FRONTEND (Angular y angular material)
-
-npm install -g @angular/cli
-ng add @angular/material
-
-Iniciar:
-ng serve -o
