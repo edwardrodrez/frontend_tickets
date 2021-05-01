@@ -1,0 +1,136 @@
+
+//Colors
+$status-new: #ff3c3c;
+$status-solved: rgb(83, 13, 100);
+$color-hover:rgb(228, 224, 224);
+//Size text
+$textsmall: 12px;
+$textmedium: 16px;
+$textlong: 17px;
+
+p {
+    margin: 0;
+}
+
+//Previous arrow
+.previous-arrow p {
+    margin: 10px; 
+    font-size: $textmedium;  
+}
+.previous-arrow {
+    width: 100%;
+
+}
+.previous-arrow-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+}
+.previous-arrow-item:hover {
+    border-radius: 10px;
+    background: $color-hover;
+}
+
+//Card 
+.card-tickets {
+    min-width: 330px;
+}
+.card-tickets-header {
+    margin: 20px;
+}
+.mat-card-header {
+    margin: 10px !important;
+}
+
+//Item del ticket
+.ticket-item {
+    padding:10px;
+    cursor: pointer;
+    border-bottom: 1px solid $color-hover;
+}
+.ticket-item:hover{
+    border-radius: 10px;
+    background: $color-hover;
+}
+.ticket-header-item,.ticket-body-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-content {
+    display: flex; 
+    align-items: center;
+}
+
+//Text de Ticket-item
+.ticket-text-asunt{ 
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(77, 74, 74);
+    margin-left: 2px;
+} 
+.ticket-tex-msg {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgb(163, 155, 155);
+
+}
+.ticket-body-item {
+    align-items: center;
+    margin-bottom: 5px;
+}
+.text-header-item {
+    font-size: $textsmall;
+    font-weight: 400;
+    color: black;
+}
+.text-solved {
+    font-size: $textsmall; 
+}
+.tik {
+    margin-bottom: 4px;
+}
+
+//Status text
+.status {
+    border-radius: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    letter-spacing: 1px;
+    font-size: $textsmall;
+    color: #fff;
+    font-weight: 500;
+    margin-right: 2px;
+}
+.status-solved {
+    background: $status-solved;
+}
+.status-new {
+    background: $status-new;
+}
+
+
+
+
+
+//Text msg no tickets
+.no-tickets {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+//Icons
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//Badge 
+.mat-badge-medium.mat-badge-after .mat-badge-content {
+    right: -22px;
+    background: $status-new;
+}
+

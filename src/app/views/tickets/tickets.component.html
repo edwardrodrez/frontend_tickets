@@ -1,0 +1,73 @@
+<!-- Previous page-->
+<div class="previous-arrow">
+    <div class="previous-arrow-item">
+        <mat-icon class="icon" color="warn">keyboard_arrow_left</mat-icon>
+        <p>Volver</p>
+    </div>
+</div>
+
+<!-- Card de tickets-->
+<mat-card class="card-tickets">
+    <mat-card-header>
+        <mat-card-title><span class="span-count-new" [matBadge]="badgeContent" [matBadgeHidden]="tickets?.length < 1"
+                matBadgeOverlap="false">Tickets</span></mat-card-title>
+    </mat-card-header>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-card-content>
+        <!-- En el caso de que no hayan tickets-->
+        <div *ngIf="!tickets" class="no-tickets">
+            <p>No hay tickets aun..</p>
+        </div>
+        <!-- En caso contrario listamos los tickets-->
+        <div *ngIf="tickets">
+            <div class="card-tickets-items" *ngFor="let ticket of tickets">
+                <!--ITEM NEW-->
+                <!--Status esta en new-->
+                <div *ngIf="ticket.status == 'NEW'" class="ticket-item">
+                    <div class="ticket-header-item tik">
+                        <p class="text-header-item">De: {{ticket.from}}</p>
+                        <p class="text-header-item">Enviado: {{ticket.date | date:'short'}}</p>
+                    </div>
+                    <div class="ticket-body-item">
+                        <div class="ticket-content-item">
+                            <div class="ticket-content tik">
+                                <p class="status-new status">NUEVO</p>
+                                <div class="ticket-text-asunt">
+                                    <!--Verificamos el largo de la cadena y concatenamos ...-->
+                                    <p>{{ (ticket.subject.length >22)? (ticket.subject | slice:0:22) + '...'
+                                        :(ticket.subject) }}</p>
+                                </div>
+                            </div>
+                            <div class="ticket-tex-msg tik">
+                                <p>{{ (ticket.body.length >29)? (ticket.body | slice:0:29) + '...' :(ticket.body) }}</p>
+                            </div>
+                        </div>
+                        <div class="icon-select-item">
+                            <mat-icon class="icon" color="warn">keyboard_arrow_right</mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <!--ITEM SOLVED-->
+                <!--Si status esta solved-->
+                <div *ngIf="ticket.status == 'SOLVED'" class="ticket-item">
+                    <div class="ticket-body-item">
+                        <div class="ticket-content-item">
+                            <div class="ticket-content tik">
+                                <p class="status-solved status">RESPONDIDO</p>
+                                <div class="ticket-text-asunt">
+                                    <p>{{ (ticket.subject | slice:0:22) }}</p>
+                                </div>
+                            </div>
+                            <div class="ticket-tex-msg">
+                                <p class="text-solved">{{ticket.date | date:'short'}}</p>
+                            </div>
+                        </div>
+                        <div class="icon-select-item">
+                            <mat-icon class="icon" color="warn">keyboard_arrow_right</mat-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
